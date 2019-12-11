@@ -1,0 +1,41 @@
+{
+    "name": "simoneddy/aflutils",
+    "description": "AflUtils",
+    "type": "project",
+    "license": "MIT",
+    "config": {
+        "bin-dir": "bin"
+    },
+    "authors": [
+        {
+            "name": "Simon Eddy",
+            "email": "simon@simoneddy.com.au"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+       "psr-4": {
+          "AflUtils\\": "src"
+       }
+    },
+    "require": {
+        "pimple/pimple": "^3.2",
+        "adbario/php-dot-notation": "^2.2",
+        "symfony/console": "^5.0",
+        "symfony/process": "^5.0",
+        "simoneddy/path": "dev-master",
+        "simoneddy/dot-config-loader": "dev-master",
+        "php-ds/php-ds": "^1.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.0",
+        "phpspec/phpspec": "^6.1"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/simonceddy/dot-config-loader"
+        }
+    ]
+}

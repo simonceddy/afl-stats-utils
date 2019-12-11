@@ -1,0 +1,202 @@
+{
+    "kicks": {
+        "player": {
+            "surname": "Simpson",
+            "givenNames": "Dawson"
+        },
+        "value": 2.555556,
+        "games": 9
+    },
+    "marks": {
+        "player": {
+            "surname": "Polson",
+            "givenNames": "Cameron"
+        },
+        "value": 0,
+        "games": 3
+    },
+    "handballs": {
+        "player": {
+            "surname": "Young",
+            "givenNames": "Robbie"
+        },
+        "value": 1.333333,
+        "games": 3
+    },
+    "disposals": {
+        "player": {
+            "surname": "Vardy",
+            "givenNames": "Nathan"
+        },
+        "value": 6.545455,
+        "games": 11
+    },
+    "average_disposals": {
+        "player": {
+            "surname": "Kennedy",
+            "givenNames": "Josh"
+        },
+        "value": 0.378182,
+        "games": 22
+    },
+    "goals": {
+        "player": {
+            "surname": "Laird",
+            "givenNames": "Rory"
+        },
+        "value": 0,
+        "games": 22
+    },
+    "behinds": {
+        "player": {
+            "surname": "Keath",
+            "givenNames": "Alex"
+        },
+        "value": 0,
+        "games": 18
+    },
+    "hitouts": {
+        "player": {
+            "surname": "Laird",
+            "givenNames": "Rory"
+        },
+        "value": 0,
+        "games": 22
+    },
+    "tackles": {
+        "player": {
+            "surname": "Lever",
+            "givenNames": "Jake"
+        },
+        "value": 0.375,
+        "games": 8
+    },
+    "rebound_50": {
+        "player": {
+            "surname": "Fogarty",
+            "givenNames": "Darcy"
+        },
+        "value": 0,
+        "games": 4
+    },
+    "inside_50": {
+        "player": {
+            "surname": "Graham",
+            "givenNames": "Caleb"
+        },
+        "value": 0,
+        "games": 3
+    },
+    "clearances": {
+        "player": {
+            "surname": "Fogarty",
+            "givenNames": "Darcy"
+        },
+        "value": 0,
+        "games": 4
+    },
+    "clangers": {
+        "player": {
+            "surname": "Otten",
+            "givenNames": "Andy"
+        },
+        "value": 0.666667,
+        "games": 3
+    },
+    "frees_for": {
+        "player": {
+            "surname": "Deluca",
+            "givenNames": "Josh"
+        },
+        "value": 0,
+        "games": 6
+    },
+    "frees_against": {
+        "player": {
+            "surname": "Ellis",
+            "givenNames": "Corey"
+        },
+        "value": 0,
+        "games": 4
+    },
+    "brownlow_votes": {
+        "player": {
+            "surname": "Kelly",
+            "givenNames": "Jake"
+        },
+        "value": 0,
+        "games": 22
+    },
+    "contested_possessions": {
+        "player": {
+            "surname": "McKay",
+            "givenNames": "Ben"
+        },
+        "value": 2,
+        "games": 3
+    },
+    "uncontested_possessions": {
+        "player": {
+            "surname": "McInerney",
+            "givenNames": "Oscar"
+        },
+        "value": 2.52381,
+        "games": 21
+    },
+    "contested_marks": {
+        "player": {
+            "surname": "Mackay",
+            "givenNames": "David"
+        },
+        "value": 0,
+        "games": 18
+    },
+    "marks_inside_50": {
+        "player": {
+            "surname": "Laird",
+            "givenNames": "Rory"
+        },
+        "value": 0,
+        "games": 22
+    },
+    "one_percenters": {
+        "player": {
+            "surname": "Kennedy Harris",
+            "givenNames": "Jay"
+        },
+        "value": 0,
+        "games": 5
+    },
+    "bounces": {
+        "player": {
+            "surname": "Kelly",
+            "givenNames": "Jake"
+        },
+        "value": 0,
+        "games": 22
+    },
+    "goal_assists": {
+        "player": {
+            "surname": "Keath",
+            "givenNames": "Alex"
+        },
+        "value": 0,
+        "games": 18
+    },
+    "time_on_ground": {
+        "player": {
+            "surname": "Daniels",
+            "givenNames": "Brent"
+        },
+        "value": 2.876923,
+        "games": 26
+    },
+    "subbed": {
+        "player": {
+            "surname": "Crouch",
+            "givenNames": "Brad"
+        },
+        "value": 0,
+        "games": 22
+    }
+}

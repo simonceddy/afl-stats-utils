@@ -1,0 +1,202 @@
+{
+    "kicks": {
+        "player": {
+            "surname": "Gaff",
+            "givenNames": "Andrew"
+        },
+        "value": 19.863636,
+        "games": 22
+    },
+    "marks": {
+        "player": {
+            "surname": "Taberner",
+            "givenNames": "Matthew"
+        },
+        "value": 8,
+        "games": 9
+    },
+    "handballs": {
+        "player": {
+            "surname": "Treloar",
+            "givenNames": "Adam"
+        },
+        "value": 18.916667,
+        "games": 24
+    },
+    "disposals": {
+        "player": {
+            "surname": "Macrae",
+            "givenNames": "Jack"
+        },
+        "value": 33.347826,
+        "games": 23
+    },
+    "average_disposals": {
+        "player": {
+            "surname": "Cutler",
+            "givenNames": "Tom"
+        },
+        "value": 7.223333,
+        "games": 3
+    },
+    "goals": {
+        "player": {
+            "surname": "Cameron",
+            "givenNames": "Jeremy"
+        },
+        "value": 3.166667,
+        "games": 24
+    },
+    "behinds": {
+        "player": {
+            "surname": "Cameron",
+            "givenNames": "Jeremy"
+        },
+        "value": 2.083333,
+        "games": 24
+    },
+    "hitouts": {
+        "player": {
+            "surname": "Witts",
+            "givenNames": "Jarrod"
+        },
+        "value": 45.818182,
+        "games": 22
+    },
+    "tackles": {
+        "player": {
+            "surname": "Steele",
+            "givenNames": "Jack"
+        },
+        "value": 8.2,
+        "games": 20
+    },
+    "rebound_50": {
+        "player": {
+            "surname": "Stewart",
+            "givenNames": "Tom"
+        },
+        "value": 8.04,
+        "games": 25
+    },
+    "inside_50": {
+        "player": {
+            "surname": "Zorko",
+            "givenNames": "Dayne"
+        },
+        "value": 6.75,
+        "games": 24
+    },
+    "clearances": {
+        "player": {
+            "surname": "Cripps",
+            "givenNames": "Patrick"
+        },
+        "value": 8.5,
+        "games": 20
+    },
+    "clangers": {
+        "player": {
+            "surname": "OMeara",
+            "givenNames": "Jaeger"
+        },
+        "value": 5.095238,
+        "games": 21
+    },
+    "frees_for": {
+        "player": {
+            "surname": "Fyfe",
+            "givenNames": "Nat"
+        },
+        "value": 2.45,
+        "games": 20
+    },
+    "frees_against": {
+        "player": {
+            "surname": "Mumford",
+            "givenNames": "Shane"
+        },
+        "value": 3.9,
+        "games": 20
+    },
+    "brownlow_votes": {
+        "player": {
+            "surname": "Fyfe",
+            "givenNames": "Nat"
+        },
+        "value": 1.65,
+        "games": 20
+    },
+    "contested_possessions": {
+        "player": {
+            "surname": "Fyfe",
+            "givenNames": "Nat"
+        },
+        "value": 17.55,
+        "games": 20
+    },
+    "uncontested_possessions": {
+        "player": {
+            "surname": "Gaff",
+            "givenNames": "Andrew"
+        },
+        "value": 22.090909,
+        "games": 22
+    },
+    "contested_marks": {
+        "player": {
+            "surname": "Taberner",
+            "givenNames": "Matthew"
+        },
+        "value": 2.666667,
+        "games": 9
+    },
+    "marks_inside_50": {
+        "player": {
+            "surname": "Franklin",
+            "givenNames": "Lance"
+        },
+        "value": 3.4,
+        "games": 10
+    },
+    "one_percenters": {
+        "player": {
+            "surname": "Andrews",
+            "givenNames": "Harris"
+        },
+        "value": 10.714286,
+        "games": 21
+    },
+    "bounces": {
+        "player": {
+            "surname": "McKenna",
+            "givenNames": "Conor"
+        },
+        "value": 3.590909,
+        "games": 22
+    },
+    "goal_assists": {
+        "player": {
+            "surname": "Melksham",
+            "givenNames": "Jake"
+        },
+        "value": 1.166667,
+        "games": 12
+    },
+    "time_on_ground": {
+        "player": {
+            "surname": "Hartley",
+            "givenNames": "Michael"
+        },
+        "value": 31.233333,
+        "games": 3
+    },
+    "subbed": {
+        "player": {
+            "surname": "Crouch",
+            "givenNames": "Brad"
+        },
+        "value": 0,
+        "games": 22
+    }
+}
