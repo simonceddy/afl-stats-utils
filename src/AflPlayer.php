@@ -13,16 +13,20 @@ class AflPlayer implements \JsonSerializable
 
     protected Map $stats;
 
+    protected float $timePlayed;
+
     public function __construct(
         array $names,
         int $number,
         int $games,
-        Map $stats
+        Map $stats,
+        float $timePlayed
     ) {
         $this->names = $names;
         $this->number = $number;
         $this->games = $games;
         $this->stats = $stats;
+        $this->timePlayed = $timePlayed;
     }
 
     
@@ -66,6 +70,15 @@ class AflPlayer implements \JsonSerializable
             'number' => $this->number,
             'games' => $this->games,
             'stats' => $this->stats,
+            'timePlayed' => $this->timePlayed,
         ];
+    }
+
+    /**
+     * Get the value of timePlayed
+     */ 
+    public function getTimePlayed()
+    {
+        return $this->timePlayed;
     }
 }

@@ -17,8 +17,11 @@ class PlayerBuilder
             new Map(array_filter($player, function ($stat) {
                 return $stat !== 'player'
                     && $stat !== 'games'
-                    && $stat !== 'number';
-            }, ARRAY_FILTER_USE_KEY))
+                    && $stat !== 'number'
+                    && $stat !== 'subbed'
+                    && $stat !== 'time_on_ground';
+            }, ARRAY_FILTER_USE_KEY)),
+            $player['time_on_ground']
         );
     
         return $playerObject;
