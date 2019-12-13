@@ -19,6 +19,7 @@ class PlayerBuilder
                     && $stat !== 'games'
                     && $stat !== 'number'
                     && $stat !== 'subbed'
+                    && $stat !== 'average_disposals'
                     && $stat !== 'time_on_ground';
             }, ARRAY_FILTER_USE_KEY)),
             $player['time_on_ground']

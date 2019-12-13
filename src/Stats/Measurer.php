@@ -3,10 +3,12 @@ namespace AflUtils\Stats;
 
 use AflUtils\AflPlayer;
 use AflUtils\Support\Constants;
-use AflUtils\Support\GetMedian;
-use AflUtils\Utils\GeneratorFactory;
+use AflUtils\Support\GetGeometricMean;
+use AflUtils\Support\GetMedianKeys;
 use Ds\Deque;
 use Ds\Map;
+use MathPHP\Statistics\Average;
+use MathPHP\Statistics\Outlier;
 
 /**
  * The Measurer class performs aggregating, sorting and some calculations of
@@ -24,6 +26,10 @@ class Measurer
     protected Map $totals;
 
     protected CountStats $statCounter;
+
+    protected Medians $medians;
+
+    protected array $stats = [];
 
     /**
      * The minimum games played before a players stats are considered.
@@ -86,6 +92,7 @@ class Measurer
     {
         isset($this->min) ?: $this->min = new Map();
         isset($this->max) ?: $this->max = new Map();
+        isset($this->medians) ?: $this->medians = new Medians();
         isset($this->totals) ?: $this->totals = new Map();
         isset($this->statCounter) ?: $this->statCounter = new CountStats();
 
@@ -93,15 +100,21 @@ class Measurer
             $this->loopThroughStats($player);
         }
 
-        $stats = $this->statCounter->results();
+        [$totals, $perGame] = $this->statCounter->results();
 
-        foreach ($stats as $stat => $amounts) {
-            dd(GetMedian::from($amounts));
+        // TODO separate median calc
+        foreach ($perGame as $stat => $amounts) {
+            $this->medians->calculate($stat, $amounts);
+            // dd(GetGeometricMean::from($amounts));
+            $this->stats['means'][$stat] = Average::mean($amounts->toArray());
+            $this->stats['medians'][$stat] = Average::median($amounts->toArray());
         }
 
         return [
             $this->min,
             $this->max,
+            $this->medians->results(),
+            $this->stats
         ];
     }
 }

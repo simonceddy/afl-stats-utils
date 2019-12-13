@@ -10,16 +10,24 @@ class CountStats
     /**
      * @var Deque[]
      */
-    protected Map $stats;
+    protected Map $totals;
+
+    /**
+     * @var Deque[]
+     */
+    protected Map $perGameTotals;
+
+    protected array $results = [];
 
     public function __construct()
     {
-        $this->stats = new Map();
+        $this->totals = new Map();
+        $this->perGameTotals = new Map();
     }
 
     protected function sortStats()
     {
-        foreach ($this->stats as $stat => $amounts) {
+        foreach ($this->totals as $stat => $amounts) {
             $amounts->sort();
         }
     }
@@ -28,16 +36,28 @@ class CountStats
     {
         $stats = $player->getStats();
 
+        $games = $player->getGames();
+
         foreach ($stats as $stat => $value) {
-            isset($this->stats[$stat]) ?: $this->stats[$stat] = new Deque();
-            $this->stats[$stat]->push($value);
+            if ($value === 0) {
+                continue;
+            }
+            isset($this->totals[$stat]) ?: $this->totals[$stat] = new Deque();
+            isset($this->perGameTotals[$stat]) ?: $this->perGameTotals[$stat] = new Deque();
+            $this->totals[$stat]->push($value);
+            $this->perGameTotals[$stat]->push($value / $games);
         }
     }
 
+    /**
+     * Get the sorted results.
+     *
+     * @return array[Map] Returns two Maps in order of season totals and per game totals.
+     */
     public function results()
     {
         $this->sortStats();
 
-        return $this->stats;
+        return [$this->totals, $this->perGameTotals];
     }
 }

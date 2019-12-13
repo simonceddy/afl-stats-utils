@@ -3,7 +3,7 @@ namespace AflUtils\Support;
 
 use Ds\Deque;
 
-class GetMedian
+class GetMedianKeys
 {
     /**
      * Returns the median key or keys from the given collection.
@@ -18,7 +18,7 @@ class GetMedian
         if (is_int($mid = $total / 2)) {
             return [$mid - 1, $mid];
         } else {
-            return $collection[(int) floor($mid)];
+            return (int) floor($mid);
         }
     }
 }
