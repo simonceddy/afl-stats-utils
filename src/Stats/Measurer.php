@@ -2,6 +2,11 @@
 namespace AflUtils\Stats;
 
 use AflUtils\AflPlayer;
+use AflUtils\Pipeline\Pipe;
+use AflUtils\Processors\Players\PerGameCounter;
+use AflUtils\Processors\Players\StatMaximums;
+use AflUtils\Processors\Players\StatMinimums;
+use AflUtils\Processors\Players\TotalsCounter;
 use AflUtils\Support\Constants;
 use AflUtils\Support\GetGeometricMean;
 use AflUtils\Support\GetMedianKeys;
@@ -43,78 +48,24 @@ class Measurer
         $this->minGames = $minGames > 0 ? $minGames : Constants::MIN_GAMES;
     }
 
-    protected function compareToMinMax(AflPlayer $player)
-    {
-        $stats = $player->getStats();
-
-        $currentPlayer = $player->getNames();
-
-        $games = $player->getGames();
-
-        foreach ($stats as $stat => $val) {
-            if (!is_numeric($val)) {
-                continue;
-            }
-            $perGame = round($val / $games, Constants::STAT_PRECISION);
-            if (!isset($this->min[$stat])
-                || $perGame < $this->min[$stat]['value']
-            ) {
-                $this->min[$stat] = new Map([
-                    'player' => $currentPlayer,
-                    'value' => $perGame,
-                    'games' => $games
-                ]);
-            }
-            if (!isset($this->max[$stat])
-                || $perGame > $this->max[$stat]['value']
-            ) {
-                $this->max[$stat] = new Map([
-                    'player' => $currentPlayer,
-                    'value' => $perGame,
-                    'games' => $games
-                ]);
-            }
-        }
-    }
-
-    protected function loopThroughStats(AflPlayer $player)
-    {
-        $this->statCounter->process($player);
-        
-        $games = $player->getGames();
-
-        if ($games >= $this->minGames) {
-            $this->compareToMinMax($player);
-        }
-    }
-
     public function measure(iterable $data)
     {
-        isset($this->min) ?: $this->min = new Map();
-        isset($this->max) ?: $this->max = new Map();
-        isset($this->medians) ?: $this->medians = new Medians();
-        isset($this->totals) ?: $this->totals = new Map();
-        isset($this->statCounter) ?: $this->statCounter = new CountStats();
+        $min = new Map();
+        $max = new Map();
+        $totals = new Map();
+        $perGame = new Map();
+
+        $pipe = new Pipe([
+            new TotalsCounter($totals),
+            new PerGameCounter($perGame),
+            new StatMinimums($min),
+            new StatMaximums($max),
+        ]);
 
         foreach ($data as $player) {
-            $this->loopThroughStats($player);
+            $pipe($player);
         }
-
-        [$totals, $perGame] = $this->statCounter->results();
-
-        // TODO separate median calc
-        foreach ($perGame as $stat => $amounts) {
-            $this->medians->calculate($stat, $amounts);
-            // dd(GetGeometricMean::from($amounts));
-            $this->stats['means'][$stat] = Average::mean($amounts->toArray());
-            $this->stats['medians'][$stat] = Average::median($amounts->toArray());
-        }
-
-        return [
-            $this->min,
-            $this->max,
-            $this->medians->results(),
-            $this->stats
-        ];
+        
+        return [$min, $max, $totals, $perGame];
     }
 }

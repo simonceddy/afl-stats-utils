@@ -19,7 +19,7 @@ class PercentileCalc
 
     public function calculate(string $stat, float $amount)
     {
-        //$min = $this->min[$stat]['value'];
+        //$min = $this->min[$stat]['perGame']['value'];
 
         if (!isset($this->max[$stat])) {
             throw new \InvalidArgumentException(
@@ -27,7 +27,7 @@ class PercentileCalc
             );
         }
 
-        $max = $this->max[$stat]['value'];
+        $max = $this->max[$stat]['perGame']['value'];
 
         if ($amount <= 0) {
             return 0;

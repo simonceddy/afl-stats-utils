@@ -6,7 +6,8 @@ require 'vendor/autoload.php';
 
 $app = include_once 'bootstrap/app.php';
 
-$season = 2018;
+
+$season = 2019;
 
 $data = json_decode(file_get_contents($app['path']->data . '/' . $season . '.json'), true);
 $results = (new CalculatePlayerMetrics())->fromSeason($data);

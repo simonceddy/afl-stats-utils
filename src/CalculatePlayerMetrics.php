@@ -34,9 +34,9 @@ class CalculatePlayerMetrics
     {
         $players = $this->dataConverter->process($data);
 
-        [$min, $max, $medians, $stats] = $this->measurer->measure($players);
+        [$min, $max, $totals, $perGame] = $this->measurer->measure($players);
 
-        dd($stats['medians'], $medians);
+        // dd($min);
 
         $this->percentileCalc = new PercentileCalc($min, $max);
 
